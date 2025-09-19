@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador das Leis de Newton</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Simulador da 2ª Lei de Newton</h1>
+  <p>Informe dois valores e deixe um em branco. O simulador calculará o valor faltante.</p>
+
+  <div class="simulador">
+    <label for="massa">Massa (kg):</label>
+    <input type="number" id="massa" step="any"><br><br>
+
+    <label for="forca">Força (N):</label>
+    <input type="number" id="forca" step="any"><br><br>
+
+    <label for="aceleracao">Aceleração (m/s²):</label>
+    <input type="number" id="aceleracao" step="any"><br><br>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div class="info" id="saida"></div>
+
+    <!-- Campo para demonstração da 3ª Lei -->
+    <h2>3ª Lei de Newton: Ação e Reação</h2>
+    <canvas id="tela" width="500" height="200"></canvas>
+    <div class="info" id="saida3"></div>
+  
+
+  
+        <div class="more-info">
+            <a href="#" id="toggle-info" class="arrow-link">
+                <img src="https://img.icons8.com/ios-filled/40/000000/long-arrow-down.png" alt="Seta para baixo">
+            </a>
+        </div>
+        <div id="info-section" class="info-section hidden">
+            <h2>Sobre este Projeto</h2>
+            <p>Este aplicativo foi desenvolvido para facilitar a busca de informações sobre as Leis de Newton.</p>
+            <p>Desenvolvido por <strong>Luiz F.</strong>.</p>
+            <a href="https://github.com/luizwp" class="github-link" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/30/000000/github.png" alt="GitHub"> Visite o GitHub do autor
+            </a>
+        </div>
+</div>
+  <script src="js/script.js"></script>
+</body>
+</html>

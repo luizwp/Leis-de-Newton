@@ -1,0 +1,217 @@
+/* === Reset básico === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Background escuro com efeito gradiente espacial === */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  color: #e0e0e0;
+  background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* === Título e textos === */
+h1, h2 {
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+/* === Container do simulador === */
+.simulador {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+/* === Inputs e labels === */
+label {
+  font-weight: bold;
+  display: block;
+  margin: 10px 0 5px;
+  text-align: left;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  outline: none;
+  background: #1e1e1e;
+  color: #ffffff;
+  box-shadow: inset 0 0 5px rgba(0,255,255,0.3);
+}
+
+/* === Botão estilizado === */
+button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+}
+
+/* === Caixa de informações === */
+.info {
+  margin-top: 15px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px;
+  border-radius: 10px;
+  line-height: 1.4;
+  box-shadow: inset 0 0 8px rgba(0,255,255,0.2);
+  color: #d0d0d0;
+}
+
+/* === Canvas estilizado === */
+canvas {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  background: #111;
+  border: 2px solid #00c6ff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,255,255,0.2);
+}
+
+/* === Responsividade === */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .simulador {
+    padding: 15px;
+  }
+
+  input, button {
+    font-size: 0.9rem;
+  }
+
+  .info {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* Estilos para a seta e a seção de informações adicionais */
+.more-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.arrow-link img {
+    width: 24px; /* Tamanho ajustado da seta */
+    height: 24px; /* Tamanho ajustado da seta */
+    transition: transform 0.3s;
+}
+
+.arrow-link img:hover {
+    transform: scale(1.2);
+}
+
+/* Botão Recolher */
+#collapse-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #ff4d4d; /* Cor para o botão de recolher */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#collapse-button:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+}
+
+/* Seção de informações com animação */
+.info-section {
+    margin-top: 30px;
+    padding: 0 20px; /* Padding inicial para ocultar o conteúdo */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    box-shadow: inset 0 0 8px rgba(0,255,255,0.2);
+    max-height: 0; /* Inicialmente escondido */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa o max-height */
+    transition: max-height 0.5s ease, padding 0.5s ease; /* Animação de deslizamento e padding */
+}
+
+.info-section.hidden {
+    max-height: 0; /* Esconde a seção */
+    padding: 0 20px; /* Remove o padding para ocultar */
+    
+    
+}
+
+.info-section.visible {
+    max-height: 500px; /* Ajuste conforme necessário para a altura máxima */
+    padding: 20px; /* Restaura o padding quando visível */
+}
+
+.info-section h2 {
+    margin-bottom: 15px;
+    color: #fffefe;
+    font-size: 1.5em;
+}
+
+.info-section p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #868686;
+}
+
+.github-link {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.github-link img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.github-link img:hover {
+    transform: scale(1.1);
+}
